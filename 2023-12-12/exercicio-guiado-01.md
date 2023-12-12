@@ -27,6 +27,7 @@ Neste exercício, você irá aprender a:
 Mantenha-se atento aos detalhes e não hesite em fazer perguntas se algo não estiver claro. Vamos começar!
 
 Visualize a seguinte situação: hoje marca o seu primeiro dia como monitor na biblioteca da escola, e a tarefa é registrar os nomes dos alunos que reservaram livros. Relembrando suas aulas de Javascript, você decide armazenar esses nomes no navegador do seu computador seguindo o padrão abaixo:
+
 ```javascript
 const OPequenoPrincipe = "Francisco José";  // linha 01
 const CemAnosDeSolidao = "Maria Conceição";   // linha 02
@@ -50,19 +51,19 @@ const 1984 = "Vinícius Lima";   // linha 19
 const CronicasDeNarnia = "Eduarda Santos";   // linha 20
 ```
 
-
-
 Para realizar isso, você clica com o botão direito do mouse, seleciona a opção "Inspecionar" e, em seguida, acessa a aba "Console".
 
 ![Alt text](./image-exe-01.png)
 
 Digite cada linha do código Javascript e pressione a tecla Enter. O que aconteceu? O que foi exibido na tela do console?
 
+R: Ao adicionar cada uma das variáveis, é retornado undefined. Mas, quando vou criar a variável 1984, retorna um erro, pois isso é uma declaração indevida.
+
 Agora, no console, digite a chave da variável para o livro "O Bem-Amado", no caso, `OBemAmado`, e pressione Enter. O que aconteceu? Por que você acha que isso ocorreu? Qual é a justificativa para esse comportamento?
 
+R: A variável "OBemAmado" ainda não foi declarada.
+
 Prossiga testando o mesmo processo para os outros livros, seguindo a sequência. 
-
-
 
 
 Uma semana após ter pegado emprestado o livro "O Bem-Amado", o aluno "Francisco José" devolve o livro e outro aluno, chamado "Allan José", pega o mesmo livro emprestado. O que você faria para atualizar o nome do aluno no seu navegador?
@@ -74,23 +75,11 @@ Teste:
 
 O que aconteceu? Que mensagem apareceu no console? Tente encontrar uma resposta para essa mensagem. O que faria para contornar esse problema?
 
-
-
--
-
--
-
--
-
--
-
-
-
-
-
+R: Seguindo o padrão citado acima, com a declaração com o const, o valor não se altera. Para resolver o problema, seria interessante utilizar o var. Declarei a variável OBemAmado novamente, só que com var, atualizando o valor da variável, que também está intríseco ao local em memória.
 
 Provavelmente, você já encontrou a resposta para esse problema. Agora, aplique essa mudança utilizando `var` e `let`, e faça os testes utilizando as duas chaves para variáveis.
 
+R: O resultado não altera.
 
 # Exercício Guiado 01 - Variáveis e Seus Tipos em Javascript (Parte 02)
 
@@ -114,6 +103,8 @@ matricula2002;
 
 O que apareceu? O que acha que aconteceu?
 
+R: As variáveis ainda não foram declaradas.
+
 Digite:
 
 ```javascript
@@ -123,6 +114,8 @@ let matricula2002;
 
 Agora, digite no console essas mesmas variáveis. O que aconteceu?
 
+R: Retorna null. Porque a variável já foi declarada, só que não existe nenhum valor dentro dela.
+
 Agora, digite:
 
 ```javascript
@@ -131,6 +124,8 @@ typeof matricula15;
 ```
 
 O que apareceu? O que acha que aconteceu?
+
+R: Retorna o tipo do valor da variável. 
 
 Para organizar melhor o código, José utiliza agora objetos para armazenar as informações de maneira organizada, seguindo o seguinte padrão:
 
@@ -148,7 +143,11 @@ aluno01.matricula;
 
 O que apareceu? O que isso significa?
 
+R: Retorna undefined, que é o resultado da operação de atribuir um valor a uma variável. Agora, consigo acessar os valores das propriedades.
+
 Digamos que, além de nome e matrícula, agora você pretenda adicionar o livro que o aluno mantém emprestado. O que você pode fazer no objeto para atualizar essas informações?
+
+R: aluno01.livroEmprestado = "O Pequeno Príncipe"
 
 Tente agora o seguinte:
 
@@ -160,6 +159,7 @@ aluno01;
 
 O que aconteceu? Qual seria a segunda forma de modificar essa informação? Aplique esse mesmo procedimento aos outros alunos.
 
+R: Foi adicionado uma nova chave chamada livroEmprestado dentro do objeto. Para modificar, só alterar o valor de livroEmprestado.
 
 As variáveis criadas até o momento têm o mesmo perfil de informações e servem para listar os alunos da biblioteca. Que tipo de variável poderia ser utilizada para organizar essas informações de uma maneira mais sucinta?
 
@@ -171,9 +171,11 @@ José resolveu então implementar o Array alunos da seguinte forma:
     //E exibiu no console 
     alunos
 ```
-O que aconteceu no script acima?O que você percebeu do método push()?
+O que aconteceu no script acima? O que você percebeu do método push()?
 Aplique esse método a todos os alunos.
 Ao final consulte no console o array alunos.
+
+R: Retornou 1, pois 1 é o tamanho do array. Conforme vou adicionando, o valor vai aumentando.
 
 Agora, implemente um array estudantes como no script:
 ```javascript 
@@ -182,6 +184,7 @@ Agora, implemente um array estudantes como no script:
 Repita o mesmo procedimento do exercício anterior.
 O que você concluiu disso? Qual é a diferença entre let alunos e const estudantes.
 
+R: Não muda, embora seja const. Pois os valores primitivos estão intrísecos às variáveis, mas objetos e arrays não são. Ou seja, o local em memória não muda.
 
 José, muito esperto, resolveu copiar a lista de estudantes da seguinte maneira.
 
@@ -193,7 +196,9 @@ José, muito esperto, resolveu copiar a lista de estudantes da seguinte maneira.
     estudantes;
     alunos;
 ```
-O que aconteceu?Por que isso aconteceu?Como isso poderia ser resolvido?
+O que aconteceu? Por que isso aconteceu? Como isso poderia ser resolvido?
+
+R: O JavaScript trabalha por referências. Então, a variável estudantes aponta para a variável alunos. Então, estudantes vai mudar os alunos.
 
 Tente:
 ```javascript
@@ -204,4 +209,6 @@ Tente:
     estudantes;
     alunos;
 ```
-O que aconteceu agora? Que técnica foi aplicada ?Isso pode se estender aos objetos?
+O que aconteceu agora? Que técnica foi aplicada? Isso pode se estender aos objetos?
+
+R: 
