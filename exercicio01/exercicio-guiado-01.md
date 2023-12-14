@@ -172,10 +172,13 @@ José resolveu então implementar o Array alunos da seguinte forma:
     alunos
 ```
 O que aconteceu no script acima? O que você percebeu do método push()?
+
+R: Ele adicionou o objeto aluno01 dentro do array alunos.
+
 Aplique esse método a todos os alunos.
 Ao final consulte no console o array alunos.
 
-R: Retornou 1, pois 1 é o tamanho do array. Conforme vou adicionando, o valor vai aumentando.
+R: Retornou o tamanho do array. Conforme vou adicionando, o valor vai aumentando.
 
 Agora, implemente um array estudantes como no script:
 ```javascript 
@@ -211,4 +214,4 @@ Tente:
 ```
 O que aconteceu agora? Que técnica foi aplicada? Isso pode se estender aos objetos?
 
-R: 
+R: Ao invés de utilizar uma referência direta na variável alunos, ele cria uma cópia do array alunos usando o spread dentro de um array.
