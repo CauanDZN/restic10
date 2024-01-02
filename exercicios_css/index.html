@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula CSS</title>
+    <link href="style/style.css" rel="stylesheet" type="text/css"/>
+</head>
+
+<body>
+    <header>Aula CSS</header>
+    <main>
+        <section id="seletores">
+            <h2>Seletores:</h2>
+            <article class="seletor">
+                <h3>Universal</h3>
+                <p> Utiliza-se o * para aplicar uma propriedade a todos os elementos</p>
+            </article>
+            <article class="seletor">
+                <h3>Tipo</h3>
+                <p> Pode-se indicar uma tag e especificar o tipo. Ex: div, h2, p etc</p>
+            </article>
+            <article class="seletor">
+                <h3>De Classe</h3>
+                <p> .nome-da-classe Dessa forma você pode selecionar diversos elementos pertencentes a uma mesma class </p>
+            </article>
+            <article class="seletor">
+                <h3>De id</h3>
+                <p> #nome-id para aplicar a propriedade ao elemento que possui esse identificador único</p>
+            </article>
+            <article> 
+                <h3>De atributo</h3>
+                <p> [atributo:'estado'] Para aplicar css ao elemento que possui tal atributo</p>
+                <p draggable="true">Arrastável</p>
+            </article>
+            <article>
+                <h3>Por posição</h3>
+                <p> utilizando nth-child</p>
+                <ul id="seletor-posição">
+                    <li>Item 1</li>
+                    <li>Item 2</li>
+                    <li>Item 3</li>
+                </ul>
+            </article>
+        </section>
+        <section id="pseudoclasses">
+            <h2>Pseudo Classes:</h2>
+            <article>
+                <h3>hover</h3>
+               <button id="btn-hover"> botão hover</button>
+            </article>
+            <article>
+                <h3>Focus within</h3>
+                <div class="container">
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" name="nome">
+                </div>
+            </article>
+        </section>
+        <section id="pseudoelementos">
+            <h2>Pseudo Elementos:</h2>
+            <article>
+                <h3>before</h3>
+               <p class="pseudo-elemento-before">Adiciona um conteúdo antes do elemento CSS.</p>
+            </article>
+            <article>
+                <h3>After</h3>
+                <p class="pseudo-elemento-after">Adiciona conteúdo após o elemento</p>
+            </article>
+        </section>
+        <section>
+            <h2> Exemplo prático</h2>
+            <form>
+                <input type="text" id="email" name="email" pattern="^[^\s@]+@[^\s@]+\.[^\s@]+$" placeholder=" " required>
+                <label for="email">Email:</label>
+                <button type="submit">Enviar</button>
+              </form>
+        </section>
+        
+    </main>
+
+    
+</body>
+
+</html>

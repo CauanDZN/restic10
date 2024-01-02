@@ -1,0 +1,42 @@
+body {
+  font-family: 'Arial', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.input-container {
+  position: relative;
+  margin: 20px;
+}
+
+.materialui-input {
+  width: 300px;
+  height: 40px;
+  font-size: 16px;
+  padding: 10px;
+  border: 1px solid #bdbdbd;
+  border-radius: 4px;
+  outline: none;
+}
+
+label {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  font-size: 16px;
+  color: #757575;
+  pointer-events: none;
+  transition: transform 0.2s ease-out, color 0.2s ease-out, font-size 0.2s ease-out;
+}
+
+.materialui-input:focus + label,
+.materialui-input:valid + label {
+  transform: translateY(-250%) scale(1.0);
+  font-size: 14px;
+  background-color: #fff;
+  color: #2196f3;
+}
