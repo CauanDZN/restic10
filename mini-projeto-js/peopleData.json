@@ -1,7 +1,12 @@
 [
   {
-    "name": "Cauan",
+    "name": "Teste",
     "email": "cauanvictor0325@gmail.com",
-    "phone": "85987673952"
+    "phone": "40028922"
+  },
+  {
+    "name": "Fulano",
+    "email": "fulano@gmail.com",
+    "phone": "40028922"
   }
 ]

@@ -18,7 +18,6 @@ function listPeople(people) {
 }
 
 function addPerson(people) {
-    readline.prompt('Press ENTER to continue...');
     console.clear();
     const name = readline.question('Enter the name: ').trim();
     const email = readline.question('Enter the email: ').trim();
@@ -27,7 +26,7 @@ function addPerson(people) {
         console.log('Email already registered!');
         return;
     }
-    
+
     const phone = readline.question('Enter the phone: ').trim();
 
     const newPerson = { name, email, phone };
@@ -68,6 +67,8 @@ function editPerson(people) {
 
         people[index].name = newName;
         people[index].phone = newPhone;
+
+        saveDataToFile(people);  // Salvar imediatamente após a edição
 
         console.log('Person edited successfully!');
     } else {
