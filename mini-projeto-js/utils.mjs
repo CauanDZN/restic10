@@ -22,6 +22,12 @@ function addPerson(people) {
     console.clear();
     const name = readline.question('Enter the name: ').trim();
     const email = readline.question('Enter the email: ').trim();
+
+    if (findPersonIndexByEmail(people, email) !== -1) {
+        console.log('Email already registered!');
+        return;
+    }
+    
     const phone = readline.question('Enter the phone: ').trim();
 
     const newPerson = { name, email, phone };
