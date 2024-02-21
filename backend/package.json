@@ -3,10 +3,11 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {
-    "dev": "node --watch aula06.js"
-  },
   "author": "",
+  "scripts": {
+    "prestart": "docker compose up -d",
+    "start": "node --watch aula07.js"
+  },
   "license": "ISC",
   "dependencies": {
     "express": "^4.18.2",

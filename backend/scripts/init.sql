@@ -18,3 +18,6 @@ CREATE TABLE pessoa_telefone (
     telefone_id INT REFERENCES telefones(id),
     PRIMARY KEY (pessoa_id, telefone_id)
 );
+
+-- Reiniciar a sequência do ID da tabela pessoas para começar de 1
+ALTER SEQUENCE pessoas_id_seq RESTART WITH 1;

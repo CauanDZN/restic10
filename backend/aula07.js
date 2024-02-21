@@ -6,10 +6,10 @@ const app = express();
 const PORT = 3000;
 
 const pool = new Pool({
-  user: 'postgres',
+  user: 'cauan',
   host: 'localhost',
-  database: 'postgres',
-  password: 'minhaSenha',
+  database: 'irede',
+  password: 'cauan',
   port: 5432,
 });
 
@@ -45,20 +45,12 @@ app.post('/login', async (req, res) => {
       return res.status(401).json({ message: 'Pessoa não encontrada.' });
     }
 
-    const token = jwt.sign({ id: pessoa.id, email: pessoa.email }, 'seu_segredo', { expiresIn: '1h' });
+    const token = jwt.sign({ id: pessoa.id, email: pessoa.email }, 'segredo', { expiresIn: '1h' });
 
     res.status(200).json({ token });
   } catch (error) {
     console.error(error);
     res.status(500).json({ message: 'Erro ao autenticar pessoa.' });
-  }
-});
-
-app.use((req, res, next) => {
-  if (req.url !== '/login') {
-    verificarToken(req, res, next);
-  } else {
-    next();
   }
 });
 
@@ -76,7 +68,7 @@ app.get('/pessoas', async (req, res) => {
     res.status(200).json(pessoasComTelefones);
   } catch (error) {
     console.error(error);
-    res.status(500).json({ message: 'Erro ao recuperar pessoas.' });
+    return res.status(500).json({ message: 'Erro ao recuperar pessoas.' });
   }
 });
 

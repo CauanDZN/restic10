@@ -11,13 +11,13 @@ app.get('/pessoas', (req, res) => {
   try {
       if (fs.existsSync(DATA_FILE)) {
           const pessoas = JSON.parse(fs.readFileSync(DATA_FILE, 'utf8'));
-          res.status(200).json(pessoas);
+          return res.status(200).json(pessoas);
       } else {
-          res.status(200).json([]);
+          return res.status(200).json([]);
       }
   } catch (error) {
       console.error(error);
-      res.status(500).json({ message: 'Erro ao recuperar pessoas.' });
+      return res.status(500).json({ message: 'Erro ao recuperar pessoas.' });
   }
 });
 
